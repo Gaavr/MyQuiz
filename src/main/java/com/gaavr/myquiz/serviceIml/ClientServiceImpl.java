@@ -1,8 +1,9 @@
-package com.gaavr.myquiz.service;
+package com.gaavr.myquiz.serviceIml;
 
 
 import com.gaavr.myquiz.model.Client;
 import com.gaavr.myquiz.repository.ClientRepository;
+import com.gaavr.myquiz.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
