@@ -18,14 +18,14 @@ public class QuestionController {
     @Autowired
     public QuestionController(QuestionService questionService) { this.questionService = questionService; }
 
-    @Tag(name="Добавление вопроса", description="Добавление нового вопроса в базу данных")
+//    @Tag(name="Добавление вопроса", description="Добавление нового вопроса в базу данных")
     @PostMapping(value = "/question")
     public ResponseEntity<?> create(@RequestBody Question question) {
         questionService.create(question);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @Tag(name="Получение списка всех вопросов")
+//    @Tag(name="Получение списка всех вопросов")
     @GetMapping(value = "/questions")
     public ResponseEntity<List<Question>> read() {
         final List<Question> questions = questionService.readAll();
@@ -34,7 +34,7 @@ public class QuestionController {
                 : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    @Tag(name="Получение конкретного вопроса по id")
+//    @Tag(name="Получение конкретного вопроса по id")
     @GetMapping(value = "/question/{id}")
     public ResponseEntity<Question> read(@PathVariable(name = "id") int id) {
         final Question question = questionService.read(id);
@@ -43,7 +43,7 @@ public class QuestionController {
                 : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    @Tag(name="Изменение вопроса по id")
+//    @Tag(name="Изменение вопроса по id")
     @PutMapping(value = "/question/{id}")
     public ResponseEntity<?> update(@PathVariable(name = "id") int id, @RequestBody Question question) {
         final boolean updated = questionService.update(question, id);
@@ -52,7 +52,7 @@ public class QuestionController {
                 : new ResponseEntity<>(HttpStatus.NOT_MODIFIED);
     }
 
-    @Tag(name="Удаление вопроса по id")
+//    @Tag(name="Удаление вопроса по id")
     @DeleteMapping(value = "/question/{id}")
     public ResponseEntity<?> delete(@PathVariable(name = "id") int id) {
         final boolean deleted = questionService.delete(id);
