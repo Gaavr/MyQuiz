@@ -25,12 +25,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User read(int id) {
+    public User read(String id) {
         return userRepository.findById(id).get();
     }
 
     @Override
-    public boolean update(User user, int id) {
+    public boolean update(User user, String id) {
         if (userRepository.existsById(id)) {
             user.setId(id);
             userRepository.save(user);
@@ -40,7 +40,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean delete(int id) {
+    public boolean delete(String id) {
         if (userRepository.existsById(id)) {
             userRepository.deleteById(id);
             return true;

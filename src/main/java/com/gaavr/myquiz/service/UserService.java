@@ -10,11 +10,11 @@ public interface UserService {
 
     List<User> readUsers();
 
-    User read(int id);
+    User read(String id);
 
-    boolean update(User user, int id);
+    boolean update(User user, String id);
 
-    boolean delete(int id);
+    boolean delete(String id);
 
     boolean deleteAll();
 }
