@@ -10,11 +10,11 @@ public interface QuestionService {
 
     List<Question> readAll();
 
-    Question read(int id);
+    Question read(String id);
 
-    boolean update(Question question, int id);
+    boolean update(Question question, String id);
 
-    boolean delete(int id);
+    boolean delete(String id);
 
     boolean deleteAll();
 }

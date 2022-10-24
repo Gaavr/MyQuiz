@@ -25,12 +25,12 @@ public class QuestionServiceImpl implements QuestionService {
     }
 
     @Override
-    public Question read(int id) {
+    public Question read(String id) {
         return questionRepository.findById(id).get();
     }
 
     @Override
-    public boolean update(Question question, int id) {
+    public boolean update(Question question, String id) {
         if (questionRepository.existsById(id)) {
             question.setId(id);
             questionRepository.save(question);
@@ -40,7 +40,7 @@ public class QuestionServiceImpl implements QuestionService {
     }
 
     @Override
-    public boolean delete(int id) {
+    public boolean delete(String id) {
         if (questionRepository.existsById(id)) {
             questionRepository.deleteById(id);
             return true;

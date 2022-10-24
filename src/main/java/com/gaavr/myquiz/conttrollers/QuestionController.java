@@ -36,7 +36,7 @@ public class QuestionController {
 
 //    @Tag(name="Получение конкретного вопроса по id")
     @GetMapping(value = "/question/{id}")
-    public ResponseEntity<Question> read(@PathVariable(name = "id") int id) {
+    public ResponseEntity<Question> read(@PathVariable(name = "id") String id) {
         final Question question = questionService.read(id);
         return question != null
                 ? new ResponseEntity<>(question, HttpStatus.OK)
@@ -45,7 +45,7 @@ public class QuestionController {
 
 //    @Tag(name="Изменение вопроса по id")
     @PutMapping(value = "/question/{id}")
-    public ResponseEntity<?> update(@PathVariable(name = "id") int id, @RequestBody Question question) {
+    public ResponseEntity<?> update(@PathVariable(name = "id") String id, @RequestBody Question question) {
         final boolean updated = questionService.update(question, id);
         return updated
                 ? new ResponseEntity<>(HttpStatus.OK)
@@ -54,7 +54,7 @@ public class QuestionController {
 
 //    @Tag(name="Удаление вопроса по id")
     @DeleteMapping(value = "/question/{id}")
-    public ResponseEntity<?> delete(@PathVariable(name = "id") int id) {
+    public ResponseEntity<?> delete(@PathVariable(name = "id") String id) {
         final boolean deleted = questionService.delete(id);
         return deleted
                 ? new ResponseEntity<>(HttpStatus.OK)
