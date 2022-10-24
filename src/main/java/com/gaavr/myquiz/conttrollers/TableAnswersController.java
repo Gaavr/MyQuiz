@@ -26,7 +26,7 @@ public class TableAnswersController {
     }
 
     @GetMapping(value = "/tableanswers/{id}")
-    public ResponseEntity<TableAnswers> read(@PathVariable(name = "id") int id) {
+    public ResponseEntity<TableAnswers> read(@PathVariable(name = "id") String id) {
         final TableAnswers tableAnswers = tableAnswersService.read(id);
         return tableAnswers != null
                 ? new ResponseEntity<>(tableAnswers, HttpStatus.OK)
@@ -42,7 +42,7 @@ public class TableAnswersController {
     }
 
     @PutMapping(value = "/tableanswers/{id}")
-    public ResponseEntity<?> update(@PathVariable(name = "id") int id, @RequestBody TableAnswers tableAnswers) {
+    public ResponseEntity<?> update(@PathVariable(name = "id") String id, @RequestBody TableAnswers tableAnswers) {
         final boolean updated = tableAnswersService.update(tableAnswers, id);
         return updated
                 ? new ResponseEntity<>(HttpStatus.OK)
@@ -50,7 +50,7 @@ public class TableAnswersController {
     }
 
     @DeleteMapping(value = "/tableanswers/{id}")
-    public ResponseEntity<?> delete(@PathVariable(name = "id") int id) {
+    public ResponseEntity<?> delete(@PathVariable(name = "id") String id) {
         final boolean deleted = tableAnswersService.delete(id);
 
         return deleted

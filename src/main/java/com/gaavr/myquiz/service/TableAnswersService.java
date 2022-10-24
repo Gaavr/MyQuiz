@@ -8,11 +8,11 @@ public interface TableAnswersService {
 
     void create(TableAnswers tableAnswers);
 
-    TableAnswers read(int id);
+    TableAnswers read(String id);
 
     List<TableAnswers> readAll();
 
-    boolean update(TableAnswers tableAnswers, int id);
+    boolean update(TableAnswers tableAnswers, String id);
 
-    boolean delete(int id);
+    boolean delete(String id);
 }

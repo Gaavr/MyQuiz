@@ -10,11 +10,11 @@ public interface RightAnswersService {
 
     List<RightAnswers> readAll();
 
-    RightAnswers read(int id);
+    RightAnswers read(String id);
 
-    boolean update(RightAnswers rightAnswers, int id);
+    boolean update(RightAnswers rightAnswers, String id);
 
-    boolean delete(int id);
+    boolean delete(String id);
 
     boolean deleteAll();
 }

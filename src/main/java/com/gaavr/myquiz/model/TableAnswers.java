@@ -9,7 +9,7 @@ public class TableAnswers {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private String id;
 
     @Column(name = "user_id")
     private String userId;
@@ -29,11 +29,11 @@ public class TableAnswers {
     @Column(name = "is_user_answer_correct")
     private boolean isUserAnswerCorrect;
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

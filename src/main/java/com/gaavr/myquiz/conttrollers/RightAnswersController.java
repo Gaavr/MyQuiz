@@ -34,7 +34,7 @@ public class RightAnswersController {
     }
 
     @GetMapping(value = "/rightanswers/{id}")
-    public ResponseEntity<RightAnswers> read(@PathVariable(name = "id") int id) {
+    public ResponseEntity<RightAnswers> read(@PathVariable(name = "id") String id) {
         final RightAnswers rightAnswers = rightAnswersService.read(id);
         return rightAnswers != null
                 ? new ResponseEntity<>(rightAnswers, HttpStatus.OK)
@@ -42,7 +42,7 @@ public class RightAnswersController {
     }
 
     @PutMapping(value = "/rightanswers/{id}")
-    public ResponseEntity<?> update(@PathVariable(name = "id") int id, @RequestBody RightAnswers rightAnswers) {
+    public ResponseEntity<?> update(@PathVariable(name = "id") String id, @RequestBody RightAnswers rightAnswers) {
         final boolean updated = rightAnswersService.update(rightAnswers, id);
         return updated
                 ? new ResponseEntity<>(HttpStatus.OK)
@@ -50,7 +50,7 @@ public class RightAnswersController {
     }
 
     @DeleteMapping(value = "/rightanswers/{id}")
-    public ResponseEntity<?> delete(@PathVariable(name = "id") int id) {
+    public ResponseEntity<?> delete(@PathVariable(name = "id") String id) {
         final boolean deleted = rightAnswersService.delete(id);
         return deleted
                 ? new ResponseEntity<>(HttpStatus.OK)

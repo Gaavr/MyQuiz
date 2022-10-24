@@ -20,7 +20,7 @@ public class TableAnswersServiceImpl implements TableAnswersService {
     }
 
     @Override
-    public TableAnswers read(int id) {
+    public TableAnswers read(String id) {
         return tableAnswersRepository.findById(id).get();
     }
 
@@ -30,7 +30,7 @@ public class TableAnswersServiceImpl implements TableAnswersService {
     }
 
     @Override
-    public boolean update(TableAnswers tableAnswers, int id) {
+    public boolean update(TableAnswers tableAnswers, String id) {
         if (tableAnswersRepository.existsById(id)) {
             tableAnswers.setId(id);
             tableAnswersRepository.save(tableAnswers);
@@ -40,7 +40,7 @@ public class TableAnswersServiceImpl implements TableAnswersService {
     }
 
     @Override
-    public boolean delete(int id) {
+    public boolean delete(String id) {
         if (tableAnswersRepository.existsById(id)) {
             tableAnswersRepository.deleteById(id);
             return true;

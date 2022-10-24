@@ -25,12 +25,12 @@ public class RightAnswersServiceImpl implements RightAnswersService {
     }
 
     @Override
-    public RightAnswers read(int id) {
+    public RightAnswers read(String id) {
         return rightAnswersRepository.findById(id).get();
     }
 
     @Override
-    public boolean update(RightAnswers rightAnswers, int id) {
+    public boolean update(RightAnswers rightAnswers, String id) {
         if (rightAnswersRepository.existsById(id)) {
             rightAnswers.setId(id);
             rightAnswersRepository.save(rightAnswers);
@@ -40,7 +40,7 @@ public class RightAnswersServiceImpl implements RightAnswersService {
     }
 
     @Override
-    public boolean delete(int id) {
+    public boolean delete(String id) {
         if (rightAnswersRepository.existsById(id)) {
             rightAnswersRepository.deleteById(id);
             return true;

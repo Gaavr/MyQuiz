@@ -1,15 +1,17 @@
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
 CREATE TABLE IF NOT EXISTS public.user (
-    "id" int8 primary key GENERATED ALWAYS AS IDENTITY,
+    "id" uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
     "name" text,
     "phone" text
 );
 CREATE TABLE IF NOT EXISTS public.tables (
-    "id" int8 primary key GENERATED ALWAYS AS IDENTITY,
+    "id" uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
     "user_id" text,
     "table_number" int8
 );
 CREATE TABLE IF NOT EXISTS public.table_answers (
-    "id" int8 primary key GENERATED ALWAYS AS IDENTITY,
+    "id" uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
     "user_id" text,
     "table_id" int8,
     "question_id" text,
@@ -18,11 +20,11 @@ CREATE TABLE IF NOT EXISTS public.table_answers (
     "is_user_answer_correct" bool
 );
 CREATE TABLE IF NOT EXISTS public.questions (
-    "id" integer primary key GENERATED ALWAYS AS IDENTITY,
+    "id" uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
     "question" text,
     "answer" text
 );
 CREATE TABLE IF NOT EXISTS public.answers (
-    "id" int8 primary key GENERATED ALWAYS AS IDENTITY,
+   "id" uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
     "answer" text
 );
