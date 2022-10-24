@@ -32,7 +32,7 @@ public class TablesController {
     }
 
     @GetMapping(value = "/tables/{id}")
-    public ResponseEntity<Tables> read(@PathVariable(name = "id") int id) {
+    public ResponseEntity<Tables> read(@PathVariable(name = "id") String id) {
         final Tables tables = tablesService.read(id);
         return tables != null
                 ? new ResponseEntity<>(tables, HttpStatus.OK)
@@ -40,7 +40,7 @@ public class TablesController {
     }
 
     @PutMapping(value = "/tables/{id}")
-    public ResponseEntity<?> update(@PathVariable(name = "id") int id, @RequestBody Tables tables ) {
+    public ResponseEntity<?> update(@PathVariable(name = "id") String id, @RequestBody Tables tables ) {
         final boolean updated = tablesService.update(tables, id);
         return updated
                 ? new ResponseEntity<>(HttpStatus.OK)
@@ -48,7 +48,7 @@ public class TablesController {
     }
 
     @DeleteMapping(value = "/tables/{id}")
-    public ResponseEntity<?> delete(@PathVariable(name = "id") int id) {
+    public ResponseEntity<?> delete(@PathVariable(name = "id") String id) {
         final boolean deleted = tablesService.delete(id);
         return deleted
                 ? new ResponseEntity<>(HttpStatus.OK)

@@ -8,13 +8,13 @@ public interface TablesService {
 
     void create(Tables tables);
 
-    Tables read(int id);
+    Tables read(String id);
 
     List<Tables> readAll();
 
-    boolean update(Tables tables, int id);
+    boolean update(Tables tables, String id);
 
-    boolean delete(int id);
+    boolean delete(String id);
 
     boolean deleteAll();
 }

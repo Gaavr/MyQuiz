@@ -20,7 +20,7 @@ public class TableServiceImpl implements TablesService {
     }
 
     @Override
-    public Tables read(int id) {
+    public Tables read(String id) {
         return tablesRepository.findById(id).get();
     }
 
@@ -30,7 +30,7 @@ public class TableServiceImpl implements TablesService {
     }
 
     @Override
-    public boolean update(Tables tables, int id) {
+    public boolean update(Tables tables, String id) {
         if (tablesRepository.existsById(id)) {
             tables.setId(id);
             tablesRepository.save(tables);
@@ -40,7 +40,7 @@ public class TableServiceImpl implements TablesService {
     }
 
     @Override
-    public boolean delete(int id) {
+    public boolean delete(String id) {
         if (tablesRepository.existsById(id)) {
             tablesRepository.deleteById(id);
             return true;
