@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class QuestionServiceImpl implements QuestionService {
@@ -25,12 +26,12 @@ public class QuestionServiceImpl implements QuestionService {
     }
 
     @Override
-    public Question read(String id) {
+    public Question read(UUID id) {
         return questionRepository.findById(id).get();
     }
 
     @Override
-    public boolean update(Question question, String id) {
+    public boolean update(Question question, UUID id) {
         if (questionRepository.existsById(id)) {
             question.setId(id);
             questionRepository.save(question);
@@ -40,7 +41,7 @@ public class QuestionServiceImpl implements QuestionService {
     }
 
     @Override
-    public boolean delete(String id) {
+    public boolean delete(UUID id) {
         if (questionRepository.existsById(id)) {
             questionRepository.deleteById(id);
             return true;

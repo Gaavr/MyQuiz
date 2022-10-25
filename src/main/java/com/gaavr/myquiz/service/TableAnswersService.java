@@ -3,16 +3,17 @@ package com.gaavr.myquiz.service;
 import com.gaavr.myquiz.model.TableAnswers;
 
 import java.util.List;
+import java.util.UUID;
 
 public interface TableAnswersService {
 
     void create(TableAnswers tableAnswers);
 
-    TableAnswers read(String id);
+    TableAnswers read(UUID id);
 
     List<TableAnswers> readAll();
 
-    boolean update(TableAnswers tableAnswers, String id);
+    boolean update(TableAnswers tableAnswers, UUID id);
 
-    boolean delete(String id);
+    boolean delete(UUID id);
 }

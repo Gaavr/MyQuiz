@@ -1,6 +1,7 @@
 package com.gaavr.myquiz.model;
 
 import javax.persistence.*;
+import java.util.UUID;
 
 @Entity
 @Table(name = "tables")
@@ -9,7 +10,7 @@ public class Tables {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private UUID id;
 
     @Column(name = "user_id")
     private String userId;
@@ -17,11 +18,11 @@ public class Tables {
     @Column(name = "table_number")
     private Integer tableNumber;
 
-    public String getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

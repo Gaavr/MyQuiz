@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 public class TablesController {
@@ -32,7 +33,7 @@ public class TablesController {
     }
 
     @GetMapping(value = "/tables/{id}")
-    public ResponseEntity<Tables> read(@PathVariable(name = "id") String id) {
+    public ResponseEntity<Tables> read(@PathVariable(name = "id") UUID id) {
         final Tables tables = tablesService.read(id);
         return tables != null
                 ? new ResponseEntity<>(tables, HttpStatus.OK)
@@ -40,7 +41,7 @@ public class TablesController {
     }
 
     @PutMapping(value = "/tables/{id}")
-    public ResponseEntity<?> update(@PathVariable(name = "id") String id, @RequestBody Tables tables ) {
+    public ResponseEntity<?> update(@PathVariable(name = "id") UUID id, @RequestBody Tables tables ) {
         final boolean updated = tablesService.update(tables, id);
         return updated
                 ? new ResponseEntity<>(HttpStatus.OK)
@@ -48,7 +49,7 @@ public class TablesController {
     }
 
     @DeleteMapping(value = "/tables/{id}")
-    public ResponseEntity<?> delete(@PathVariable(name = "id") String id) {
+    public ResponseEntity<?> delete(@PathVariable(name = "id") UUID id) {
         final boolean deleted = tablesService.delete(id);
         return deleted
                 ? new ResponseEntity<>(HttpStatus.OK)

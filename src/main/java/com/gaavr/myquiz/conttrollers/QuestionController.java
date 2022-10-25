@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 public class QuestionController {
@@ -36,7 +37,7 @@ public class QuestionController {
 
 //    @Tag(name="Получение конкретного вопроса по id")
     @GetMapping(value = "/question/{id}")
-    public ResponseEntity<Question> read(@PathVariable(name = "id") String id) {
+    public ResponseEntity<Question> read(@PathVariable(name = "id") UUID id) {
         final Question question = questionService.read(id);
         return question != null
                 ? new ResponseEntity<>(question, HttpStatus.OK)
@@ -45,7 +46,7 @@ public class QuestionController {
 
 //    @Tag(name="Изменение вопроса по id")
     @PutMapping(value = "/question/{id}")
-    public ResponseEntity<?> update(@PathVariable(name = "id") String id, @RequestBody Question question) {
+    public ResponseEntity<?> update(@PathVariable(name = "id") UUID id, @RequestBody Question question) {
         final boolean updated = questionService.update(question, id);
         return updated
                 ? new ResponseEntity<>(HttpStatus.OK)
@@ -54,7 +55,7 @@ public class QuestionController {
 
 //    @Tag(name="Удаление вопроса по id")
     @DeleteMapping(value = "/question/{id}")
-    public ResponseEntity<?> delete(@PathVariable(name = "id") String id) {
+    public ResponseEntity<?> delete(@PathVariable(name = "id") UUID id) {
         final boolean deleted = questionService.delete(id);
         return deleted
                 ? new ResponseEntity<>(HttpStatus.OK)

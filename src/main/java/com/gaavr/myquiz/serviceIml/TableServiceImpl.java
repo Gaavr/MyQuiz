@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class TableServiceImpl implements TablesService {
@@ -20,7 +21,7 @@ public class TableServiceImpl implements TablesService {
     }
 
     @Override
-    public Tables read(String id) {
+    public Tables read(UUID id) {
         return tablesRepository.findById(id).get();
     }
 
@@ -30,7 +31,7 @@ public class TableServiceImpl implements TablesService {
     }
 
     @Override
-    public boolean update(Tables tables, String id) {
+    public boolean update(Tables tables, UUID id) {
         if (tablesRepository.existsById(id)) {
             tables.setId(id);
             tablesRepository.save(tables);
@@ -40,7 +41,7 @@ public class TableServiceImpl implements TablesService {
     }
 
     @Override
-    public boolean delete(String id) {
+    public boolean delete(UUID id) {
         if (tablesRepository.existsById(id)) {
             tablesRepository.deleteById(id);
             return true;
