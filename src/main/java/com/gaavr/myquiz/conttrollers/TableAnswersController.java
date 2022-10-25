@@ -1,5 +1,6 @@
 package com.gaavr.myquiz.conttrollers;
 
+import com.gaavr.myquiz.conttrollers.contracts.TableAnswersContract;
 import com.gaavr.myquiz.model.TableAnswers;
 import com.gaavr.myquiz.service.TableAnswersService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-public class TableAnswersController {
+public class TableAnswersController implements TableAnswersContract {
 
     private final TableAnswersService tableAnswersService;
 

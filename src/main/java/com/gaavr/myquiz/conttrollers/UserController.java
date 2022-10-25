@@ -1,5 +1,6 @@
 package com.gaavr.myquiz.conttrollers;
 
+import com.gaavr.myquiz.conttrollers.contracts.UserContract;
 import com.gaavr.myquiz.model.User;
 import com.gaavr.myquiz.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-public class UserController {
+public class UserController implements UserContract {
 
     private final UserService userService;
 
