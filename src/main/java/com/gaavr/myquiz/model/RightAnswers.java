@@ -1,10 +1,15 @@
 package com.gaavr.myquiz.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.UUID;
 
 @Entity
 @Table(name = "answers")
+@Getter
+@Setter
 public class RightAnswers {
 
     @Id
@@ -14,20 +19,4 @@ public class RightAnswers {
 
     @Column(name = "answer")
     private String answer;
-
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
-    public String getAnswer() {
-        return answer;
-    }
-
-    public void setAnswer(String answer) {
-        this.answer = answer;
-    }
 }

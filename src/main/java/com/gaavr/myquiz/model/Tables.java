@@ -1,10 +1,15 @@
 package com.gaavr.myquiz.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.UUID;
 
 @Entity
 @Table(name = "tables")
+@Getter
+@Setter
 public class Tables {
 
     @Id
@@ -17,28 +22,4 @@ public class Tables {
 
     @Column(name = "table_number")
     private Integer tableNumber;
-
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
-    public Integer getTableNumber() {
-        return tableNumber;
-    }
-
-    public void setTableNumber(Integer tableNumber) {
-        this.tableNumber = tableNumber;
-    }
 }

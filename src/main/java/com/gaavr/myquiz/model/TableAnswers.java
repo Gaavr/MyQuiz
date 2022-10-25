@@ -1,10 +1,15 @@
 package com.gaavr.myquiz.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.UUID;
 
 @Entity
 @Table(name = "tables_answers")
+@Getter
+@Setter
 public class TableAnswers {
 
     @Id
@@ -29,60 +34,4 @@ public class TableAnswers {
 
     @Column(name = "is_user_answer_correct")
     private boolean isUserAnswerCorrect;
-
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
-    public String getTableId() {
-        return tableId;
-    }
-
-    public void setTableId(String tableId) {
-        this.tableId = tableId;
-    }
-
-    public String getQuestionId() {
-        return questionId;
-    }
-
-    public void setQuestionId(String questionId) {
-        this.questionId = questionId;
-    }
-
-    public String getAnswerId() {
-        return answerId;
-    }
-
-    public void setAnswerId(String answerId) {
-        this.answerId = answerId;
-    }
-
-    public String getUserAnswer() {
-        return userAnswer;
-    }
-
-    public void setUserAnswer(String userAnswer) {
-        this.userAnswer = userAnswer;
-    }
-
-    public boolean isUserAnswerCorrect() {
-        return isUserAnswerCorrect;
-    }
-
-    public void setUserAnswerCorrect(boolean userAnswerCorrect) {
-        isUserAnswerCorrect = userAnswerCorrect;
-    }
 }
