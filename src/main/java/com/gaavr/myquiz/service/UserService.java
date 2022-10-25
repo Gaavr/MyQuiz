@@ -3,6 +3,7 @@ package com.gaavr.myquiz.service;
 import com.gaavr.myquiz.model.User;
 
 import java.util.List;
+import java.util.UUID;
 
 public interface UserService {
 
@@ -10,11 +11,11 @@ public interface UserService {
 
     List<User> readUsers();
 
-    User read(String id);
+    User read(UUID id);
 
-    boolean update(User user, String id);
+    boolean update(User user, UUID id);
 
-    boolean delete(String id);
+    boolean delete(UUID id);
 
     boolean deleteAll();
 }
