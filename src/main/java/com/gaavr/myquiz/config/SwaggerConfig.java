@@ -1,4 +1,4 @@
-package com.gaavr.myquiz.configuration;
+package com.gaavr.myquiz.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

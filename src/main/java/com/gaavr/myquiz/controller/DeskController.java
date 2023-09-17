@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/tables")
+@RequestMapping("/desks")
 @RequiredArgsConstructor
 public class DeskController {
 
