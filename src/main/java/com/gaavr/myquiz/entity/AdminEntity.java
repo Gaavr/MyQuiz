@@ -1,4 +1,4 @@
-package com.gaavr.myquiz.entities;
+package com.gaavr.myquiz.entity;
 
 import lombok.Getter;
 import lombok.Setter;

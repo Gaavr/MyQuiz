@@ -1,10 +1,10 @@
-package com.gaavr.myquiz.entities;
+package com.gaavr.myquiz.entity;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "users")
-public class UsersEntity {
+@Table(name = "desk")
+public class DeskEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

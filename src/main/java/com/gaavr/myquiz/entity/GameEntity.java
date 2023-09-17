@@ -1,4 +1,4 @@
-package com.gaavr.myquiz.entities;
+package com.gaavr.myquiz.entity;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;

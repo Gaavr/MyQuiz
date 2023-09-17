@@ -1,4 +1,4 @@
-package com.gaavr.myquiz.entities;
+package com.gaavr.myquiz.entity;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Setter
 @Entity
 @Table(name = "temporary_questions")
-public class TemporaryQuestionsEntity {
+public class TemporaryQuestionEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

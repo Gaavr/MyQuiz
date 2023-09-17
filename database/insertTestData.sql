@@ -1,4 +1,4 @@
-INSERT INTO users (name, login, password) VALUES
+INSERT INTO desk (name, login, password) VALUES
     ('User3', 'user3', 'password3'),
     ('User4', 'user4', 'password4'),
     ('User5', 'user5', 'password5'),
