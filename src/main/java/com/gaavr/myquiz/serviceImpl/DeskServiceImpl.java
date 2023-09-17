@@ -12,30 +12,30 @@ import java.util.List;
 @RequiredArgsConstructor
 public class DeskServiceImpl implements DeskService {
 
-    private DeskRepository userRepository;
+    private final DeskRepository deskRepository;
 
     @Override
     public DeskEntity createDesk(DeskEntity user) {
-        return userRepository.save(user);
+        return deskRepository.save(user);
     }
 
     @Override
     public DeskEntity getDeskById(Long id) {
-        return userRepository.findById(id).orElse(null);
+        return deskRepository.findById(id).orElse(null);
     }
 
     @Override
     public List<DeskEntity> getAllDesks() {
-        return userRepository.findAll();
+        return deskRepository.findAll();
     }
 
     @Override
     public DeskEntity updateDesk(DeskEntity user) {
-        return userRepository.save(user);
+        return deskRepository.save(user);
     }
 
     @Override
     public void deleteDesk(Long id) {
-        userRepository.deleteById(id);
+        deskRepository.deleteById(id);
     }
 }

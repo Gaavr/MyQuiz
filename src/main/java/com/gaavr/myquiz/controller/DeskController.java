@@ -15,27 +15,27 @@ public class DeskController {
     private final DeskService deskService;
 
     @PostMapping
-    public DeskEntity createTable(@RequestBody DeskEntity table) {
+    public DeskEntity createDesk(@RequestBody DeskEntity table) {
         return deskService.createDesk(table);
     }
 
     @GetMapping("/{id}")
-    public DeskEntity getTableById(@PathVariable Long id) {
+    public DeskEntity getDeskById(@PathVariable Long id) {
         return deskService.getDeskById(id);
     }
 
     @GetMapping
-    public List<DeskEntity> getAllTables() {
+    public List<DeskEntity> getAllDesks() {
         return deskService.getAllDesks();
     }
 
     @PutMapping("/{id}")
-    public DeskEntity updateTable(@PathVariable Long id, @RequestBody DeskEntity table) {
+    public DeskEntity updateDesk(@PathVariable Long id, @RequestBody DeskEntity table) {
         return deskService.updateDesk(table);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteTable(@PathVariable Long id) {
+    public void deleteDesk(@PathVariable Long id) {
         deskService.deleteDesk(id);
     }
 }
